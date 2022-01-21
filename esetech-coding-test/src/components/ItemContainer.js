@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import axios from "axios";
+import GameData from "../apis/GameData";
 
-function ItemContainer() {
-  useEffect(async () => {
-    try {
+const ItemContainer = () => {
+  useEffect(() => {
+    async function fetchData() {
       const response = await axios
         .get(
           "https://adaorachi.github.io/esetech-assessment-api/game-data.json"
@@ -11,9 +12,8 @@ function ItemContainer() {
         .then((res) => {
           console.log(res);
         });
-    } catch (error) {
-      console.log(error);
     }
+    fetchData();
   }, []);
   return (
     <div className="ItemContainer">
@@ -23,6 +23,6 @@ function ItemContainer() {
       </div>
     </div>
   );
-}
+};
 
 export default ItemContainer;
