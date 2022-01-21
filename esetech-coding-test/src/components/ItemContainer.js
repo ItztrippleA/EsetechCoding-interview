@@ -3,11 +3,17 @@ import axios from "axios";
 
 function ItemContainer() {
   useEffect(async () => {
-    const response = await axios
-      .get("https://adaorachi.github.io/esetech-assessment-api/game-data.json")
-      .then((res) => {
-        console.log(res);
-      });
+    try {
+      const response = await axios
+        .get(
+          "https://adaorachi.github.io/esetech-assessment-api/game-data.json"
+        )
+        .then((res) => {
+          console.log(res);
+        });
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
   return (
     <div className="ItemContainer">
