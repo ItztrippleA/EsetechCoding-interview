@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import GameData from "../apis/GameData";
 
 const ItemContainer = () => {
+  const [gameData, setGameData] = useState([]);
   useEffect(() => {
     async function fetchData() {
       const response = await axios
@@ -11,6 +12,7 @@ const ItemContainer = () => {
         )
         .then((res) => {
           console.log(res);
+          setGameData(res.data);
         });
     }
     fetchData();
