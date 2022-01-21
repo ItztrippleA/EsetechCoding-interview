@@ -126,3 +126,27 @@ html {
   border: none;
   font-size: 13px;
 }
+
+.ItemContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #05070f;
+  margin-left: 50px;
+  padding: 10px;
+  border-radius: 10px;
+}
+.item-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+  background-color: #fff;
+  margin-left: 50px;
+  padding: 10px;
+  border-radius: 10px;
+}
