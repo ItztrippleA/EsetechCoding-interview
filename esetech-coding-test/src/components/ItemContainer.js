@@ -19,10 +19,14 @@ const ItemContainer = () => {
   }, []);
   return (
     <div className="ItemContainer">
-      <div className="item-div">
-        <div className="image"></div>
-        <div className="details"></div>
-      </div>
+      {gameData.map((game) => {
+        return (
+          <div className="item-div">
+            <div className="image"></div>
+            <div className="details"></div>
+          </div>
+        );
+      })}
     </div>
   );
 };
