@@ -3,15 +3,18 @@ import axios from "axios";
 
 function ItemContainer() {
   useEffect(async () => {
-    const result = await axios
+    const response = await axios
       .get("https://adaorachi.github.io/esetech-assessment-api/game-data.json")
       .then((res) => {
-        console.log(res.data);
+        console.log(res);
       });
   }, []);
   return (
     <div className="ItemContainer">
-      <div className="item-div"></div>
+      <div className="item-div">
+        <div className="image"></div>
+        <div className="details"></div>
+      </div>
     </div>
   );
 }
